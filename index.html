@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerorigami: F-16 Series | Premium Paper Airplanes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            purple: '#1a1a40', // Deep Navy/Purple hybrid
+                            gold: '#c5a059',
+                            dark: '#0f0f1a',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="assets/logo/logo.svg" alt="Origami Skin Logo" class="h-10 w-auto">
+                <span
+                    class="font-serif text-xl font-bold text-brand-purple tracking-wide hidden sm:block">AERORIGAMI</span>
+            </div>
+            <a href="https://www.amazon.com" target="_blank"
+                class="bg-brand-gold hover:bg-yellow-600 text-white px-6 py-2 rounded-full font-semibold transition-colors shadow-lg hover:shadow-xl flex items-center gap-2 text-sm uppercase tracking-wider">
+                Buy on Amazon
+                <i data-lucide="shopping-bag" class="h-4 w-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-5">
+            <img src="assets/processed/series1_1.jpg" alt="Background" class="w-full h-full object-cover grayscale">
+        </div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <p class="text-brand-gold uppercase tracking-[0.2em] font-bold mb-4 animate-fade-in-up">The Art of Flight
+            </p>
+            <h1 class="text-6xl md:text-8xl font-serif font-bold text-brand-purple mb-2 leading-tight">AERORIGAMI</h1>
+            <h2 class="text-3xl md:text-5xl font-light text-gray-600 mb-8">F-16 Series</h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                32 Pre-printed Templates. Professional Video Tutorials.<br>
+                <span class="font-semibold text-brand-purple">Your Squadron Awaits.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#gallery"
+                    class="px-8 py-3 border-2 border-brand-purple text-brand-purple font-semibold hover:bg-brand-purple hover:text-white transition-colors rounded-none uppercase tracking-widest text-sm">
+                    View Collection
+                </a>
+                <a href="https://www.amazon.com"
+                    class="px-8 py-3 bg-brand-purple text-white font-semibold hover:bg-brand-dark transition-colors rounded-none uppercase tracking-widest text-sm shadow-xl">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <main id="gallery" class="py-20 space-y-32">
+
+        <!-- Series 1: YF-16 -->
+        <section class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 border-b-2 border-gray-100 pb-4">
+                <div>
+                    <span class="text-brand-gold font-bold tracking-widest text-sm">SERIES 01</span>
+                    <h3 class="text-4xl font-serif font-bold text-brand-purple mt-2">YF-16 Prototype</h3>
+                </div>
+                <p class="text-gray-500 italic max-w-md text-right mt-4 md:mt-0">"The beginning of a legend. Original
+                    1974 livery."</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3] cursor-pointer">
+                    <img src="assets/processed/series1_1.jpg" alt="YF-16 1"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3] cursor-pointer">
+                    <img src="assets/processed/series1_2.jpg" alt="YF-16 2"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3] cursor-pointer">
+                    <img src="assets/processed/series1_3.jpg" alt="YF-16 3"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-left">
+                <button
+                    class="inline-flex items-center gap-2 text-brand-purple font-bold uppercase tracking-wider hover:text-brand-gold transition-colors group">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+                    Watch Tutorial
+                    <span class="block h-px w-0 bg-brand-gold transition-all duration-300 group-hover:w-full"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Series 2: F-16 Fighting Falcon -->
+        <section class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 border-b-2 border-gray-100 pb-4">
+                <div>
+                    <span class="text-brand-gold font-bold tracking-widest text-sm">SERIES 02</span>
+                    <h3 class="text-4xl font-serif font-bold text-brand-purple mt-2">F-16 Fighting Falcon</h3>
+                </div>
+                <p class="text-gray-500 italic max-w-md text-right mt-4 md:mt-0">"The backbone of modern air power in
+                    Compass Ghost grey."</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series2_1.jpg" alt="F-16 1"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series2_2.jpg" alt="F-16 2"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series2_3.jpg" alt="F-16 3"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-left">
+                <button
+                    class="inline-flex items-center gap-2 text-brand-purple font-bold uppercase tracking-wider hover:text-brand-gold transition-colors">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+                    Watch Tutorial
+                </button>
+            </div>
+        </section>
+
+        <!-- Series 3: Aggressor Squadrons -->
+        <section class="container mx-auto px-6 bg-gray-50 py-16 -mx-6 rounded-3xl">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 border-b-2 border-gray-200 pb-4">
+                <div>
+                    <span class="text-brand-gold font-bold tracking-widest text-sm">SERIES 03</span>
+                    <h3 class="text-4xl font-serif font-bold text-brand-purple mt-2">Aggressor Squadrons</h3>
+                </div>
+                <p class="text-gray-500 italic max-w-md text-right mt-4 md:mt-0">"Tactical 'Splinter' and 'Flanker'
+                    patterns for elite training."</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series3_1.jpg" alt="Aggressor 1"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series3_2.jpg" alt="Aggressor 2"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series3_3.jpg" alt="Aggressor 3"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-left">
+                <button
+                    class="inline-flex items-center gap-2 text-brand-purple font-bold uppercase tracking-wider hover:text-brand-gold transition-colors">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+                    Watch Tutorial
+                </button>
+            </div>
+        </section>
+
+        <!-- Series 4: USAF Thunderbirds -->
+        <section class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 border-b-2 border-gray-100 pb-4">
+                <div>
+                    <span class="text-brand-gold font-bold tracking-widest text-sm">SERIES 04</span>
+                    <h3 class="text-4xl font-serif font-bold text-brand-purple mt-2">USAF Thunderbirds</h3>
+                </div>
+                <p class="text-gray-500 italic max-w-md text-right mt-4 md:mt-0">"The world-famous red, white, and blue
+                    starbird design."</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series4_1.jpg" alt="Thunderbirds 1"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series4_2.jpg" alt="Thunderbirds 2"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series4_3.jpg" alt="Thunderbirds 3"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-left">
+                <button
+                    class="inline-flex items-center gap-2 text-brand-purple font-bold uppercase tracking-wider hover:text-brand-gold transition-colors">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+                    Watch Tutorial
+                </button>
+            </div>
+        </section>
+
+        <!-- Series 5: Mitsubishi F-2 -->
+        <section class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 border-b-2 border-gray-100 pb-4">
+                <div>
+                    <span class="text-brand-gold font-bold tracking-widest text-sm">SERIES 05</span>
+                    <h3 class="text-4xl font-serif font-bold text-brand-purple mt-2">Mitsubishi F-2</h3>
+                </div>
+                <p class="text-gray-500 italic max-w-md text-right mt-4 md:mt-0">"The 'Viper Zero' featuring unique
+                    JASDF maritime camouflage."</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series5_1.jpg" alt="F-2 1"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series5_2.jpg" alt="F-2 2"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="group relative overflow-hidden shadow-lg rounded-sm aspect-[4/3]">
+                    <img src="assets/processed/series5_3.jpg" alt="F-2 3"
+                        class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-left">
+                <button
+                    class="inline-flex items-center gap-2 text-brand-purple font-bold uppercase tracking-wider hover:text-brand-gold transition-colors">
+                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+                    Watch Tutorial
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Buy Section -->
+    <section class="bg-brand-purple text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Ready to Take Flight?</h2>
+            <p class="text-brand-gold uppercase tracking-widest mb-8 text-sm">Digital Video Tutorials Included</p>
+            <p class="text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
+                Experience the precision of Aerorigami. Get your copy of the F-16 Series today and start building your
+                own squadron.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="https://www.amazon.com"
+                    class="px-10 py-4 bg-brand-gold text-white font-bold text-lg rounded-full hover:bg-yellow-600 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Get the Book on Amazon
+                </a>
+                <div class="flex gap-6 mt-4 sm:mt-0">
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i data-lucide="instagram"
+                            class="w-8 h-8"></i></a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i data-lucide="twitter"
+                            class="w-8 h-8"></i></a>
+                    <a href="#" class="text-white/70 hover:text-white transition-colors"><i data-lucide="youtube"
+                            class="w-8 h-8"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-500 py-8 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center flex flex-col md:flex-row justify-between items-center text-sm">
+            <p>&copy; 2025 origami-skin. All rights reserved.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
