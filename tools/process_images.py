@@ -3,8 +3,8 @@ import subprocess
 import glob
 
 # Setup paths
-SRC_DIR = 'assets/source'
-DEST_DIR = 'assets/processed'
+SRC_DIR = 'source_images'
+DEST_DIR = 'processed'
 
 # Ensure destination exists
 os.makedirs(DEST_DIR, exist_ok=True)
