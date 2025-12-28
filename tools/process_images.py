@@ -14,15 +14,15 @@ files = sorted(glob.glob(os.path.join(SRC_DIR, '*.HEIC')))
 
 print(f"Found {len(files)} files.")
 
-# Define series mapping (3 images per series for 5 series)
-# We have exactly 15 files, so 15 / 5 = 3 images per series.
-images_per_series = 3
+# Define skin mapping (3 images per skin for 5 skins)
+# We have exactly 15 files, so 15 / 5 = 3 images per skin.
+images_per_skin = 3
 
 for i, input_path in enumerate(files):
-    series_index = (i // images_per_series) + 1
-    image_index = (i % images_per_series) + 1
+    skin_index = (i // images_per_skin) + 1
+    image_index = (i % images_per_skin) + 1
     
-    output_filename = f"series{series_index}_{image_index}.jpg"
+    output_filename = f"skin{skin_index}_{image_index}.jpg"
     output_path = os.path.join(DEST_DIR, output_filename)
     
     print(f"Processing {input_path} -> {output_path}...")
