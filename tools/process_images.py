@@ -3,7 +3,7 @@ import subprocess
 import glob
 
 # Setup paths
-SRC_DIR = 'assets/gallery'
+SRC_DIR = 'assets/source'
 DEST_DIR = 'assets/processed'
 
 # Ensure destination exists
