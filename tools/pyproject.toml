@@ -1,0 +1,12 @@
+[project]
+name = "origami-skin-tools"
+version = "0.1.0"
+description = "Tools for processing images and generating QR codes for origami-skin-f16"
+requires-python = ">=3.8"
+dependencies = [
+    "qrcode[pil]>=7.4.2",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_backend"
