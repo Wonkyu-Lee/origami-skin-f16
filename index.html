@@ -471,9 +471,16 @@
             const sharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
 
             if (isIOS()) {
-                // iOS: Use custom scheme to force open in Facebook app's internal browser
-                // This avoids staying in Safari if Universal Links fail
-                window.location.href = `fb://facewebmodal/f?href=${encodeURIComponent(sharerUrl)}`;
+                // iOS: Try to open the Facebook app via scheme first
+                const fbScheme = `fb://share/?href=${currentUrl}`;
+
+                // Try to open the app
+                window.location.href = fbScheme;
+
+                // Fallback to web sharer if the app doesn't open within 500ms
+                setTimeout(() => {
+                    window.location.href = sharerUrl;
+                }, 500);
             } else if (isMobile()) {
                 // Android/Others: Open in new tab (generally handled well by Intents)
                 window.open(sharerUrl, '_blank');
