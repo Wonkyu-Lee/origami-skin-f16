@@ -472,7 +472,9 @@
 
             if (isIOS()) {
                 // iOS: Try to open the Facebook app via scheme first
-                const fbScheme = `fb://share/?href=${currentUrl}`;
+                // 'fb://share' often defaults to Messenger on iOS. 
+                // 'fb://feed' is an attempt to target the News Feed composer directly.
+                const fbScheme = `fb://feed?link=${currentUrl}`;
 
                 // Try to open the app
                 window.location.href = fbScheme;
