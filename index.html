@@ -18,12 +18,12 @@
     <meta property="og:image" content="https://f16.origami-skin.com/assets/book-cover.png">
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://f16.origami-skin.com/">
-    <meta property="twitter:title" content="Aerorigami: F-16 Series | Premium Paper Airplanes">
-    <meta property="twitter:description"
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://f16.origami-skin.com/">
+    <meta name="twitter:title" content="Aerorigami: F-16 Series | Premium Paper Airplanes">
+    <meta name="twitter:description"
         content="32 Pre-printed Templates. Professional Video Tutorials. Your Squadron Awaits.">
-    <meta property="twitter:image" content="https://f16.origami-skin.com/assets/book-cover.png">
+    <meta name="twitter:image" content="https://f16.origami-skin.com/assets/book-cover.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link
@@ -462,14 +462,21 @@
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
 
+        function isIOS() {
+            return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        }
+
         function shareToFacebook() {
             const url = encodeURIComponent(window.location.href);
 
-            if (isMobile()) {
-                // On mobile, open without dimensions to allow app interception
+            if (isIOS()) {
+                // iOS: Navigate directly to trigger Universal Link
+                window.location.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            } else if (isMobile()) {
+                // Android/Others: Open in new tab (allowed to be intercepted by Intent)
                 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
             } else {
-                // On desktop, use popup window
+                // Desktop: Popup
                 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
             }
             toggleShareMenu();
@@ -478,7 +485,13 @@
         function shareToX() {
             const url = encodeURIComponent(window.location.href);
             const text = encodeURIComponent("Check out Aerorigami: F-16 Series!");
-            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+            const intentUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+
+            if (isMobile()) {
+                window.open(intentUrl, '_blank');
+            } else {
+                window.open(intentUrl, '_blank', 'width=600,height=400');
+            }
             toggleShareMenu();
         }
 
