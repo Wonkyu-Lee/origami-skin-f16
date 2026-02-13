@@ -467,17 +467,19 @@
         }
 
         function shareToFacebook() {
-            const url = encodeURIComponent(window.location.href);
+            const currentUrl = encodeURIComponent(window.location.href);
+            const sharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
 
             if (isIOS()) {
-                // iOS: Navigate directly to trigger Universal Link
-                window.location.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                // iOS: Use custom scheme to force open in Facebook app's internal browser
+                // This avoids staying in Safari if Universal Links fail
+                window.location.href = `fb://facewebmodal/f?href=${encodeURIComponent(sharerUrl)}`;
             } else if (isMobile()) {
-                // Android/Others: Open in new tab (allowed to be intercepted by Intent)
-                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+                // Android/Others: Open in new tab (generally handled well by Intents)
+                window.open(sharerUrl, '_blank');
             } else {
                 // Desktop: Popup
-                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+                window.open(sharerUrl, '_blank', 'width=600,height=400');
             }
             toggleShareMenu();
         }
@@ -487,9 +489,14 @@
             const text = encodeURIComponent("Check out Aerorigami: F-16 Series!");
             const intentUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
 
-            if (isMobile()) {
+            if (isIOS()) {
+                // iOS: Navigate directly to avoid "blank white window" issue
+                window.location.href = intentUrl;
+            } else if (isMobile()) {
+                // Android: New tab is usually fine
                 window.open(intentUrl, '_blank');
             } else {
+                // Desktop: Popup
                 window.open(intentUrl, '_blank', 'width=600,height=400');
             }
             toggleShareMenu();
