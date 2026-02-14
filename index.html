@@ -467,26 +467,20 @@
         }
 
         function shareToFacebook() {
-            const currentUrl = encodeURIComponent(window.location.href);
-            const sharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+            const pageUrl = window.location.href;
+            const sharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
 
-            if (isIOS()) {
-                // iOS: Try to open the Facebook app via scheme first.
-                // We use 'fb://facewebmodal' to open the internal browser of the Facebook App.
-                // We point it to 'm.facebook.com/sharer.php' to ensure the reliable mobile web sharer loads INSIDE the app.
-                // This gives the user the "Feed vs Story" choice and reliable previews.
-                const mobileSharer = `https://m.facebook.com/sharer.php?u=${currentUrl}`;
-                const fbScheme = `fb://facewebmodal/f?href=${encodeURIComponent(mobileSharer)}`;
-
-                // Try to open the app
-                window.location.href = fbScheme;
-
-                // Fallback to web sharer if the app doesn't open within 500ms
-                setTimeout(() => {
-                    window.location.href = mobileSharer;
-                }, 500);
+            if (isIOS() && navigator.share) {
+                // iOS: Use the native Web Share API (OS-level share sheet).
+                // This is the only reliable way to hand off to the Facebook app from Safari.
+                navigator.share({
+                    title: document.title,
+                    url: pageUrl
+                }).catch(() => {
+                    // User cancelled or share failed — no action needed
+                });
             } else if (isMobile()) {
-                // Android/Others: Open in new tab (generally handled well by Intents)
+                // Android/Others: Open in new tab (handled well by Intents)
                 window.open(sharerUrl, '_blank');
             } else {
                 // Desktop: Popup
