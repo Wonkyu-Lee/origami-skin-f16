@@ -468,20 +468,14 @@
 
         function shareToFacebook() {
             const pageUrl = window.location.href;
-            const sharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+            const encodedUrl = encodeURIComponent(pageUrl);
+            const sharerUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
 
-            if (isIOS() && navigator.share) {
-                // iOS: Use the native Web Share API (OS-level share sheet).
-                // This is the only reliable way to hand off to the Facebook app from Safari.
-                navigator.share({
-                    title: document.title,
-                    url: pageUrl
-                }).catch(() => {
-                    // User cancelled or share failed — no action needed
-                });
-            } else if (isMobile()) {
-                // Android/Others: Open in new tab (handled well by Intents)
-                window.open(sharerUrl, '_blank');
+            if (isMobile()) {
+                // Mobile (iOS & Android): Navigate to the mobile web sharer.
+                // On iOS, fb:// schemes are unreliable and navigator.share() doesn't pre-fill for Facebook.
+                // The web sharer is the only method that reliably shows content + preview.
+                window.location.href = sharerUrl;
             } else {
                 // Desktop: Popup
                 window.open(sharerUrl, '_blank', 'width=600,height=400');
